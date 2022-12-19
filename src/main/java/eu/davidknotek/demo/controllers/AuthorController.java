@@ -30,8 +30,8 @@ public class AuthorController {
      * @param author new author
      */
     @PostMapping("/add")
-    public void addAuthor(@RequestBody Author author) {
-        authorService.addAuthor(author);
+    public Author addAuthor(@RequestBody Author author) {
+        return authorService.addAuthor(author);
     }
 
     /**
@@ -39,8 +39,8 @@ public class AuthorController {
      * @param author eedited author
      */
     @PutMapping("/{authorId}")
-    public void updateAuthor(@RequestBody Author author, @PathVariable("authorId") Long id) {
-        authorService.updateAuthor(author, id);
+    public Author updateAuthor(@RequestBody Author author, @PathVariable("authorId") Long id) {
+        return authorService.updateAuthor(author, id);
     }
 
     @GetMapping("{authorId}")
